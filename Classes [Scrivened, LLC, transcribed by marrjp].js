@@ -22,8 +22,8 @@ var iFileName = "Classes [Scrivened, LLC, transcribed by marrjp].js";
 RequiredSheetVersion(12.999);
 
 SourceList["Z:W"] = {
-	name : "/u/Zarieth: Witch (v0.4)",
-	abbreviation : "Z:W",
+	name : "Ambassador (v0.1)",
+	abbreviation : "Ambasdr",
 	group : "Reddit/r/UnearthedArcana",
 	url : "https://reddit.com/5dtd1x/",
 	date : "2017/03/04"
