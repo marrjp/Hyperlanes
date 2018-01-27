@@ -8,17 +8,17 @@
 
 /*	-INFORMATION-
 	Subject:	Class
-	Effect:		This script adds a class called the "Witch" and its 5 subclasses
+	Effect:		This script adds the hyperlanes classes of Ambassador, Genius, Muscle, Outlaw, Pilot, and Soldier and the 18 subclasses.
 	
-				This class has been made by /u/Zarieth on the subbreddit /UnearthedArcana 
-				It can be found here: https://reddit.com/5dtd1x/
-				This code is based on v0.4 of /u/Zarieth's work (2017-03-06)
+				Hyperlanes was created as a kickstart project.
+				It can be found here: http://www.drivethrurpg.com/product/212154/HYPERLANES-Corebook
+				This code is based on the work of Scrivened LLC.
 					
-	Code by:	MorePurpleMoreBetter
-	Date:		2017-09-21 (sheet v12.998)
+	Code by:	marrjp
+	Date:		2018-01-27 (sheet v12.998)
 */
 
-var iFileName = "Witch [Zarieth's work, transcribed by MPMB].js";
+var iFileName = "Classes [Scrivened, LLC, transcribed by marrjp].js";
 RequiredSheetVersion(12.999);
 
 SourceList["Z:W"] = {
@@ -31,35 +31,27 @@ SourceList["Z:W"] = {
 
 
 //first make the sheet know which spells are witch spells
-[	// cantrips
-	"blade ward", "chill touch", "friends", "guidance", "light", "mage hand", "mending", "minor illusion", "poison spray", "resistance", "thaumaturgy", "true strike",
+[	// cantrips- Desception (add- and Influence)
+	"camouflage", "distraction", "Liar;s Tongue", "Pick Pocket",
 
 	// 1st level
-	"animal friendship", "charm person", "cure wounds", "detect magic", "detect poison and disease", "faerie fire", "find familiar", "healing word", "hex", "longstrider", "protection from evil and good", "purify food and drink", "speak with animals", "witch bolt",
-
+	"Blind Spot",  "Cloud of Smoke", "Disguise Self", "Fool's Gold",
+	
 	// 2nd level
-	"crown of madness", "darkness", "darkvision", "enhance ability", "enthrall", "hold person", "lesser restoration", "locate animals or plants", "locate object", "misty step", "moonbeam", "protection from poison", "ray of enfeeblement", "suggestion",
-
+	"Sand in the Eyes", "Stealth Modle", "Survivable Surrender", "Unfair Trade", 
+	
 	// 3rd level
-	"conjure animals", "daylight", "dispel magic", "fear", "fly", "magic circle", "major image", "protection from energy", "remove curse", "speak with dead", "spirit guardians", "tongues", "vampiric touch", "water walk",
+	"Blinding Attack", "Hide the Bodies", "Play Dead", "Switcheroo",
 
 	// 4th level
-	"banishment", "blight", "confusion", "death ward", "dominate beast", "freedom of movement", "hallucinatory terrain", "locate creature", "polymorph", "wall of fire",
-
+	"Counterfeit", "Disruption", "Impersonation",
+	
 	// 5th level
-	"animate objects", "antilife shell", "awaken", "contact other plane", "contagion", "dominate person", "dream", "geas", "greater restoration", "hold monster", "insect plague", "legend lore", "mass cure wounds", "modify memory", "planar binding", "reincarnate", "scrying",
+	"Misdirection", "Old Friend", "Straight Faced Lie",  
 
 	// 6th level
-	"circle of death", "conjure fey", "contingency", "eyebite", "find the path", "heal", "mass suggestion", "sunbeam", "true seeing",
+	"Cloak", "Illusion of Safety", 
 
-	// 7th level
-	"etherealness", "finger of death", "mirage arcane", "mordenkainen's magnificent mansion", "plane shift", "regenerate", "sequester", "symbol",
-
-	// 8th level
-	"animal shapes", "antipathy/sympathy", "dominate monster", "feeblemind", "power word stun", "sunburst",
-
-	// 9th level
-	"astral projection", "foresight", "shapechange", "true polymorph", "true resurrection"
 ].forEach( function (n) {
 	if(SpellsList[n] && SpellsList[n].classes.indexOf("witch (zarieth)") === -1) SpellsList[n].classes.push("witch (zarieth)");
 });
