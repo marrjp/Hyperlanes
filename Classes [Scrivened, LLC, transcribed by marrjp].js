@@ -102,22 +102,45 @@ ClassList["Ambassador"] = {
 			minlevel : 1,
 			description : desc([
 				"Ambassadors must expend a slot of the gambit’s level or higher.",
-				"You regain all expended gambit slots when you finish a long rest."
+				"You regain all expended gambit slots when you finish a long rest.",
+				"Gambit save DC = 8 + your proficiency bonus + your Charisma modifier.",
+				"Gambit attack modifier = your proficiency bonus + your Charisma modifier."
 			]),
-			additional : levels.map( function(n) { return (n < 2 ? 4 : n < 3 ? 5 : n < 4 ? 6 : n < 5 ? 7 : n < 6 ? 8 : n < 7 ? 9 : n < 8 ? 10 : n < 9 ? 11 : n < 10 ? 12 : n < 11 ? 14 : n < 12 ? 14) + " gambits known"; })
+			additional : levels.map( function(n) { return (n < 2 ? 4 : n < 3 ? 5 : n < 4 ? 6 : n < 5 ? 7 : n < 6 ? 8 : n < 7 ? 9 : n < 8 ? 10 : n < 9 ? 11 : n < 10 ? 12 : n < 11 ? 14 : n < 13 ? 15) + " gambits known"; 
+// complete rest of levels 15-20 later.
 		},
-		"quickening" : {
-			name : "Quickening",
-			source : ["Z:W", 3],
+		"Ambassador Inspiration" : {
+			name : "Inspiration",
+			source : ["H:A", 1],
 			minlevel : 1,
 			description : desc([
-				"As an action, I can trance to see bound spirits and into the Ethereal Plane up to 60 ft",
-				"This requires concentration, up to 1 minute; It also gives adv. on Wis (Insight) checks"
+				"As a bonus action, choose one creature other than self within 60 feet of you."
+				"That creature gains one Ambassador Inspiration die, initially a d6.",
+				"The die becomes d8 at 5th level, d10 at 10th level, and d12 at 15th level."
 			]),
 			action : ["action", ""],
 			usages : "Charisma modifier per ",
 			usagescalc : "event.value = Math.max(1, tDoc.getField(\"Cha Mod\").value);",
 			recovery : "long rest"
+		},
+		"Jack of All Trades" : {
+			name : "JackofTrades",
+			source : ["H:A", 2],
+			minlevel : 2,
+			description : desc([
+				"As a bonus action, choose one creature other than self within 60 feet of you."
+				"That creature gains one Ambassador Inspiration die, initially a d6.",
+				"The die becomes d8 at 5th level, d10 at 10th level, and d12 at 15th level."
+			]),
+		},
+		"Rousing Speech" : {
+			name : "RosuingSpeech",
+			source : ["H:A", 2],
+			minlevel : 2,
+			description : desc([
+				"You can use oration to help revitalize your wounded allies during a short rest.",
+				"If you or any friendly creatures who can hear your speech regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points. The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
+			]),
 		},
 		"subclassfeature2" : {
 			name : "Witch Covenant",
