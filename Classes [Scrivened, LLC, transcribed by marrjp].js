@@ -86,16 +86,25 @@ ClassList["Ambassador"] = {
 		prepared : true
 	},
 	features : {
-		"spellcasting" : {
-			name : "Spellcasting",
-			source : ["H:A", 2],
+		"Tricks" : {
+			name : "Tricks",
+			source : ["H:A", 1],
 			minlevel : 1,
 			description : desc([
-				"I can cast prepared witch cantrips/spells, using Charisma as my spellcasting ability",
-				"I can use an athame as a spellcasting focus or something that suits my background",
-				"I can cast my prepared witch spells as rituals if they have the ritual tag"
+				"You know two tricks of your choice from the Deception and Influence gambit schools.",
+				"You learn additional Ambassador tricks of your choice at higher levels.",
 			]),
-			additional : levels.map( function(n) { return (n < 4 ? 2 : n < 10 ? 3 : 4) + " cantrips known"; })
+			additional : levels.map( function(n) { return (n < 4 ? 2 : n < 10 ? 3 : 4) + " Tricks known"; })
+		},
+		"Gambits" : {
+			name : "Gambits",
+			source : ["H:A", 1],
+			minlevel : 1,
+			description : desc([
+				"Ambassadors must expend a slot of the gambit’s level or higher.",
+				"You regain all expended gambit slots when you finish a long rest."
+			]),
+			additional : levels.map( function(n) { return (n < 2 ? 4 : n < 3 ? 5 : n < 4 ? 6 : n < 5 ? 7 : n < 6 ? 8 : n < 7 ? 9 : n < 8 ? 10 : n < 9 ? 11 : n < 10 ? 12 : n < 11 ? 14 : n < 12 ? 14) + " gambits known"; })
 		},
 		"quickening" : {
 			name : "Quickening",
@@ -423,57 +432,6 @@ ClassSubList["witch (zarieth)-covenant of shadows"] = {
 			]),
 			usages : 1,
 			recovery : "long rest"
-		}
-	}
-};
-
-ClassSubList["witch (zarieth)-covenant of unity"] = {
-	regExpSearch : /^(?=.*witch\b)(?=.*\bunity).*$/i,
-	subname : "Covenant of Unity",
-	source : ["Z:W", 6],
-	features : {
-		"subclassfeature2" : {
-			name : "Ancestral Power",
-			source : ["Z:W", 6],
-			minlevel : 2,
-			description : desc([
-				"The DC for my spells increases by half the amount of my bound spirits (rounded down)"
-			]),
-/*			description : desc([
-				"As a reaction when casting a spell, I can dismiss a spirit to increase the spell's power",
-				"If the spell requires a save, a single target has disadv. on its save",
-				"If the spell requires an attack roll, I get adv. on one attack roll for the spell"
-			]),
-			action : ["reaction", ""] */
-		},
-		"subclassfeature6" : {
-			name : "Forceful Presence",
-			source : ["Z:W", 6],
-			minlevel : 6,
-			description : desc([
-				"I can retain control of a spirit when it is released, keeping it bound instead"
-			]),
-			usages : "Charisma modifier per ",
-			usagescalc : "event.value = Math.max(1, tDoc.getField(\"Cha Mod\").value);",
-			recovery : "long rest"
-		},
-		"subclassfeature10" : {
-			name : "Powerful Bonds",
-			source : ["Z:W", 6],
-			minlevel : 10,
-			description : desc([
-				"A spirit I bind is considered as being of one level higher than the spell slot used for it"
-			])
-		},
-		"subclassfeature14" : {
-			name : "Simulacrum",
-			source : ["Z:W", 6],
-			minlevel : 14,
-			description : desc([
-				"When I'm reduced to 0 HP but not killed, I can continue to act by my bound spirits",
-				"For 1 round per level of the highest level spirit I have bound, I can act as normal",
-				"During this time, I make death saving throws as normal (if not healed)"
-			])
 		}
 	}
 };
