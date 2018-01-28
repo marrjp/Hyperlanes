@@ -139,22 +139,23 @@ ClassList["Ambassador"] = {
 			minlevel : 2,
 			description : desc([
 				"You can use oration to help revitalize your wounded allies during a short rest.",
-				"If you or any friendly creatures who can hear your speech regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points. The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
+				"At end of short rest by spending one or more Hit Dice, regain an extra 1d6 hit points.",
+				"The extra hit points increase d8 at 9th level, d10 at 13th level, and d12 at 17th level."
 			]),
 		},
 		"subclassfeature2" : {
-			name : "Witch Covenant",
-			source : ["Z:W", 3],
-			minlevel : 2,
+			name : "Ambassador Profession",
+			source : ["H:A", 3],
+			minlevel : 3,
 			description : desc([
-				"Choose a Witch Covenant that you belong to and put it in the \"Class\" field",
-				"Choose either the Covenant of Blood, Charm, Ruin, Shadows, or the Covenant of Unity"
+				"Choose an Ambassador Profession that you belong to and put it in the \"Class\" field",
+				"Choose either Con Artist, Entertainer, or Provocateur."
 			])
 		},
-		"binding rites" : {
-			name : "Binding Rites",
+		"expertise" : {
+			name : "Expertise",
 			source : ["Z:W", 3],
-			minlevel : 2,
+			minlevel : 3,
 			description : desc([
 				"With 10 minutes of uninterrupted meditation, I can expend a spell slot to bind a spirit",
 				"The spirit's level is as the spell slot used; I can't recover this slot while the spirit is bound",
