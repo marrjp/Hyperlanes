@@ -21,18 +21,18 @@
 var iFileName = "Classes [Scrivened, LLC, transcribed by marrjp].js";
 RequiredSheetVersion(12.999);
 
-SourceList["Z:W"] = {
+SourceList["H:A"] = {
 	name : "Ambassador (v0.1)",
 	abbreviation : "Ambasdr",
-	group : "Reddit/r/UnearthedArcana",
-	url : "https://reddit.com/5dtd1x/",
-	date : "2017/03/04"
+	group : "Reddit/r/HYPERLANES",
+	url : "https://www.drivethrurpg.com/browse.php?keywords=hyperlanes&x=0&y=0&author=&artist=&pfrom=&pto=",
+	date : "2018/01/27"
 };
 
 
 //first make the sheet know which spells are witch spells
 [	// cantrips- Desception (add- and Influence)
-	"camouflage", "distraction", "Liar;s Tongue", "Pick Pocket",
+	"Camouflage", "Distraction", "Liar's Tongue", "Pick Pocket",
 
 	// 1st level
 	"Blind Spot",  "Cloud of Smoke", "Disguise Self", "Fool's Gold",
@@ -53,42 +53,42 @@ SourceList["Z:W"] = {
 	"Cloak", "Illusion of Safety", 
 
 ].forEach( function (n) {
-	if(SpellsList[n] && SpellsList[n].classes.indexOf("witch (zarieth)") === -1) SpellsList[n].classes.push("witch (zarieth)");
+	if(SpellsList[n] && SpellsList[n].classes.indexOf("Ambassador") === -1) SpellsList[n].classes.push("Ambassador");
 });
 
-ClassList["witch (zarieth)"] = {
-	regExpSearch : /witch/i,
-	name : "Witch",
-	source : ["Z:W", 1],
-	primaryAbility : "\n \u2022 Witch: Charisma;",
+ClassList["Ambassador"] = {
+	regExpSearch : /ambassador/i,
+	name : "Ambassador",
+	source : ["H:A", 1],
+	primaryAbility : "\n \u2022 Ambassador: Charisma;",
 	abilitySave : 6,
-	prereqs : "\n \u2022 Witch: Charisma 13;",
+	prereqs : "\n \u2022 Ambassador: Charisma 13;",
 	improvements :  levels.map( function(n) {
 		return n < 4 ? 0 : n < 8 ? 1 : n < 12 ? 2 : n < 16 ? 3 : n < 19 ? 4 : 5;
 	}),
-	die : 6,
-	saves : ["Wis", "Cha"],
-	skills : ["\n\n" + toUni("Witch") + ": Choose two from Arcana, Animal Handling, History, Insight, Medicine, Nature, and Religion."],
-	toolProfs : { primay : ["Herbalism kit"] },
+	die : 8,
+	saves : ["Dex", "Cha"],
+	skills : ["\n\n" + toUni("Ambassador") + ": Insight, Persuasion, plus any 2 of your choice."],
+	toolProfs : { primay : ["Diplomat's kit"] },
 	armor : [
 		[true, false, false, false]
 	],
 	weapons : [
 		[true, false]
-	],
-	equipment : "Witch starting equipment:\n \u2022 A light crossbow and 20 bolts -or- any simple weapon;\n \u2022 A component pouch -or- an athame used as an arcane focus;\n \u2022 A priest's pack -or- a scholar's pack;\n \u2022 Any simple weapon and wo daggers.\n\nAlternatively, choose 3d4 \xD7 10 gp worth of starting equipment instead of both the class' and the background's starting equipment.",
-	subclasses : ["Witch Covenant", ["witch (zarieth)-covenant of blood", "witch (zarieth)-covenant of charm", "witch (zarieth)-covenant of ruin", "witch (zarieth)-covenant of shadows", "witch (zarieth)-covenant of unity"]],
+	],)
+	equipment : "Ambassador starting equipment:\n \u2022 A• A noble sword or any simple weapon;\n \u2022 A diplomat’s pack or a military pack;\n \u2022 A catsuit armor or flight suit armor.",
+	subclasses : ["Ambassador Subclass", ["Ambassador (Con Artist)", "Ambassador (Performer)", "Ambassador (Provocateur)"]],
 	attacks : [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 	spellcastingFactor : 1,
 	spellcastingKnown : {
-		cantrips : levels.map( function(n) { return n < 4 ? 3 : n < 10 ? 4 : 5; }),
+		cantrips : levels.map( function(n) { return n < 4 ? 2 : n < 10 ? 3 : 4; }),
 		spells : "list",
 		prepared : true
 	},
 	features : {
 		"spellcasting" : {
 			name : "Spellcasting",
-			source : ["Z:W", 2],
+			source : ["H:A", 2],
 			minlevel : 1,
 			description : desc([
 				"I can cast prepared witch cantrips/spells, using Charisma as my spellcasting ability",
